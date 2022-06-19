@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIM - Rechner</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
+    <div class="container sm">
+      <header>
+        <h1 class="rechner">BMI Rechner</h1>
+      </header>
+      <div class="formflex">
+        <div class="formges">
+          <form action="">
+            <div class="gewicht">
+              <div>
+                <label for="weight" class="col-form-label">Gewicht: </label>
+              </div>
+              <div class="inputwidth">
+                <input
+                  class="form-control"
+                  step="0.01"
+                  type="number"
+                  name="weight"
+                  id="weight"
+                  max="800"
+                  value="60"
+                  placeholder="(in kg)"
+                />
+              </div>
+            </div>
+            <div class="gewicht">
+              <div>
+                <label for="tall" class="col-form-label">Höhe: </label>
+              </div>
+              <div class="lefthohe inputwidth">
+                <input
+                  class="form-control"
+                  step="0.1"
+                  type="number"
+                  name="tall"
+                  id="tall"
+                  min="1.5"
+                  max="2.34"
+                  value="1.7"
+                  placeholder="(in m)"
+                />
+              </div>
+            </div>
+            <div class="gewicht">
+              <div>
+                <label for="age" class="col-form-label">Alter: </label>
+              </div>
+
+              <div class="leftage inputwidth">
+                <input
+                  class="form-control"
+                  type="number"
+                  name="age"
+                  id="age"
+                  value="23"
+                  placeholder="(in Jahren)"
+                />
+              </div>
+            </div>
+
+            <div class="gewicht">
+              <div>
+                <label for="getbmi" class="col-form-label">BMI: </label>
+              </div>
+              <div class="leftbmi inputwidth">
+                <button
+                  id="getbmi"
+                  name="getbmi"
+                  type="submit"
+                  class="btn btn-primary btn-lg"
+                >
+                  BERECHNEN
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="outputBMI">
+          <span id="resultclr"></span>
+          <span id="outputstatus"></span>
+        </div>
+        <div id="parentidealerBMI">
+          <span id="idealerwert"></span>
+          <span id="idealertxt"></span>
+        </div>
+      </div>
+      <section>
+        <h2 id="hide">Was ist der BMI?</h2>
+        <p>
+          Der Body-Mass-Index, kurz BMI, ist die gebräuchlichste Formel zur
+          Gewichtsberechnung. Er ergibt sich aus dem Verhältnis des
+          Körpergewichts in Kilogramm und der Körpergröße in Metern zum Quadrat.
+          Je nach Höhe des errechneten Werts unterscheidet die Deutsche
+          Gesellschaft für Ernährung (DGE) für die Auswertung fünf Kategorien:
+          Untergewicht,Normalgewicht, Übergewicht, extremes
+          Übergewicht(Adipositas) und massive Adipositas.
+        </p>
+      </section>
+      <section id="hide">
+        <h3>BMI abhängig von Alter</h3>
+        <p>
+          Um eine bessere Einschätzung zum eigenen Gewicht abgeben zu können,
+          muss neben dem Gewicht und der Körpergröße auch das Alter
+          berücksichtigt werden. Das Alter ist relevant, da sich das
+          Normalgewicht mit dem Älterwerden verschiebt. Etwa ab 40 Jahren
+          verändern sich der Stoffwechsel und die Körperzusammensetzung. Die
+          Folge: Wir nehmen ganz natürlich an Gewicht zu, das Normalgewicht
+          verschiebt sich also und damit der empfohlene BMI. Allerdings kann das
+          Körpergewicht mit fortschreitendem Alter auch wieder sinken, denn
+          ältere Menschen bauen verstärkt an Muskelmasse ab, die schwerer ist
+          als Fett. Das führt zu einem geringeren Gewicht, sodass der BMI bei
+          älteren Normalgewichtigen fälschlicherweise auf Untergewicht hindeuten
+          kann.
+        </p>
+      </section>
+      <footer class="container-fluid text-center">
+        &copy; 2022 AbdulSamman
+      </footer>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
