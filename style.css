@@ -152,6 +152,7 @@ section > h3 {
   #idealerwert,
   #idealertxt {
     width: 50%;
+    font-size: 2rem;
   }
   #idealerwert,
   #resultclr {
@@ -170,5 +171,8 @@ section > h3 {
     width: 100%;
     margin-left: 0;
     margin-bottom: 5px;
+  }
+  .col-form-label {
+    font-size: 2rem;
   }
 }
