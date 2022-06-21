@@ -20,7 +20,7 @@
       <header>
         <h1 class="rechner">BMI Rechner</h1>
       </header>
-      <div class="formflex">
+      <div class="d-flex formflex">
         <div class="formges">
           <form action="">
             <div class="gewicht">
@@ -89,16 +89,20 @@
             </div>
           </form>
         </div>
-        <div class="outputBMI">
-          <span id="resultclr"></span>
-          <span id="outputstatus"></span>
-        </div>
-        <div id="parentidealerBMI">
-          <span id="idealerwert"></span>
-          <span id="idealertxt"></span>
+        <div class="parentoutput">
+          <div class="outputBMI">
+            <span id="resultclr"></span>
+            <span id="outputstatus" class="mt-2"></span>
+          </div>
+          <div class="parentoutput">
+            <div id="parentidealerBMI">
+              <span id="idealerwert"></span>
+              <span id="idealertxt" class="mt-2"></span>
+            </div>
+          </div>
         </div>
       </div>
-      <section>
+      <section class="mt-2">
         <h2 id="hide">Was ist der BMI?</h2>
         <p>
           Der Body-Mass-Index, kurz BMI, ist die gebräuchlichste Formel zur

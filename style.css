@@ -47,15 +47,10 @@ header > .rechner {
   font-size: large;
   font-weight: bold;
 }
-.formges {
-  width: 40%;
-}
 
 .gewicht {
   display: flex;
   justify-content: center;
-
-  width: 100%;
   margin: 1rem;
 }
 .col-form-label {
@@ -87,29 +82,34 @@ p {
 
 .formflex {
   background-color: #e9dac4;
-  display: flex;
-  flex-wrap: wrap;
   gap: 2%;
-
   margin: 2rem 0;
+  width: 100%;
+}
+.formges {
+  width: 60%;
 }
 
+.parentoutput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
 .outputBMI,
 #parentidealerBMI {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 28%;
+  width: 50%;
 }
 
 #outputstatus,
 #idealertxt {
   font-family: "Staatliches";
-
   font-size: 1.5vw;
   text-align: center;
-  width: fit-content;
 }
 section > h2,
 section > h3 {
@@ -122,17 +122,23 @@ section > h3 {
 @media (max-width: 767px) {
   .formflex {
     flex-direction: column;
-    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .parentoutput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 40vh;
   }
 
-  .formges,
-  #parentidealerBMI,
-  .outputBMI {
+  .formges {
     width: 100%;
   }
   #parentidealerBMI,
   .outputBMI {
-    height: 13vh;
+    width: 100%;
+    height: 100%;
   }
 
   .gewicht {
@@ -174,5 +180,12 @@ section > h3 {
   }
   .col-form-label {
     font-size: 2rem;
+  }
+  header {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+  }
+  header > .rechner {
+    font-size: 400%;
   }
 }

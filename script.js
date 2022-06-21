@@ -20,7 +20,7 @@ async function getBmiMen(event) {
   const bmi = weightValue / tallValue ** 2;
   const roundedAndToStr = bmi.toFixed(2);
   if (weight.value > 800) {
-    alert("Du bist ein Elefant!");
+    alert("Elefant oder was!!");
     return;
   }
   let status = "";
