@@ -113,7 +113,7 @@ p {
 #outputstatus,
 #idealertxt {
   font-family: "Staatliches";
-  font-size: 1.5vw;
+  font-size: 2vw;
   text-align: center;
 }
 section > h2,
@@ -125,6 +125,9 @@ section > h3 {
 }
 
 @media (max-width: 767px) {
+  .container {
+    height: 100%;
+  }
   .formflex {
     flex-direction: column;
     margin-top: 0;
@@ -133,8 +136,10 @@ section > h3 {
   .parentoutput {
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-items: center;
     width: 100%;
-    height: 40vh;
+    row-gap: 1rem;
   }
 
   .formges {
@@ -143,7 +148,7 @@ section > h3 {
   #parentidealerBMI,
   .outputBMI {
     width: 100%;
-    height: 100%;
+    height: 20vh;
   }
 
   .gewicht {
@@ -164,6 +169,7 @@ section > h3 {
   #idealertxt {
     width: 50%;
     font-size: 2rem;
+    height: 100%;
   }
   #idealerwert,
   #resultclr {
