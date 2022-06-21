@@ -201,4 +201,7 @@ section > h3 {
   header > .rechner {
     font-size: 400%;
   }
+  .form-control {
+    padding: 1rem;
+  }
 }
