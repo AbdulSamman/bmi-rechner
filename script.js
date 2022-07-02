@@ -8,6 +8,7 @@ const idealerResult = document.getElementById("idealerwert");
 const idealerTxt = document.getElementById("idealertxt");
 const button = document.getElementById("getbmi");
 const resultColor = document.getElementById("resultclr");
+const lastresult = document.getElementById("lastresult");
 
 button.addEventListener("click", getBmiMen);
 
@@ -18,9 +19,15 @@ async function getBmiMen(event) {
   const tallValue = tall.value;
   const ageValue = age.value;
   const bmi = weightValue / tallValue ** 2;
+
   const roundedAndToStr = bmi.toFixed(2);
+
+  localStorage.setItem("lastResult", roundedAndToStr);
+  const getResult = localStorage.getItem("lastResult");
+  lastresult.innerHTML = ` <span id="lastresult">CurrentlyBMI:</span> `;
+
   if (weight.value > 800) {
-    alert("Elefant oder was!!");
+    alert("Elephant or what!!");
     return;
   }
   let status = "";
@@ -44,35 +51,36 @@ async function getBmiMen(event) {
     ageStatus = 4;
     idealerResult.textContent = `${idealerBmi(23, 29)}`;
   } else if (ageValue >= 65) {
+    resultclr;
     ageStatus = 5;
     idealerResult.textContent = `${idealerBmi(24, 30)}`;
   } else {
-    alert("Alter muss großer als 18");
+    alert("Age must be older than 18");
   }
 
   if (roundedAndToStr < 19 + ageStatus) {
-    status = " Untergewicht";
+    status = " Underweight";
     color = "#00008B";
   } else if (
     roundedAndToStr >= 19 + ageStatus &&
     roundedAndToStr < 25 + ageStatus
   ) {
-    status = "Normalbereich";
+    status = "Normal weight";
     color = "#006400";
   } else if (
     roundedAndToStr >= 25 + ageStatus &&
     roundedAndToStr < 30 + ageStatus
   ) {
-    status = "Übergewicht";
+    status = "Overweight";
     color = "#ADFF2F";
   } else if (
     roundedAndToStr >= 30 + ageStatus &&
     roundedAndToStr < 40 + ageStatus
   ) {
-    status = "Adipositas";
+    status = "Extreme obesity";
     color = "#FF8C00";
   } else {
-    status = "massive Adipositas";
+    status = "massive obesity";
     color = "#B22222";
   }
 
@@ -80,14 +88,34 @@ async function getBmiMen(event) {
   outputStatus.style.color = `${color}`;
 
   resultColor.textContent = `${roundedAndToStr}`;
+
   resultColor.style.color = `${color}`;
   resultColor.style.border = `7px solid ${color}`;
 }
 
 function idealerBmi(min, max) {
+  idealerResult.style.display = "flex";
+  idealerResult.style.justifyContent = "center";
+  idealerResult.style.alignItems = "center";
   idealerResult.style.color = "seagreen";
   idealerResult.style.border = "7px solid palegreen";
-  idealerTxt.textContent = "IDEALERBMI";
+  idealerTxt.textContent = "IDEAL BMI";
   idealerTxt.style.color = "seagreen";
   return ((min + max) / 2).toFixed(2);
 }
+
+function lastResultWiederrufen() {
+  //prüfe localStorage ob schon ne wert besetzt! -> vorheriges ergebnis!
+  const lastResult = localStorage.getItem("lastResult");
+
+  if (lastResult) {
+    resultColor.textContent = `${lastResult}`;
+    lastresult.innerHTML = `<span id="lastresult">LastBMI:</span>`;
+    resultColor.style.display = "flex";
+    resultColor.style.justifyContent = "center";
+    resultColor.style.alignItems = "center";
+    resultColor.style.color = "seagreen";
+    resultColor.style.border = "7px solid pink";
+  }
+}
+lastResultWiederrufen();

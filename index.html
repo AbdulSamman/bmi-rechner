@@ -12,22 +12,22 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
     <div class="container sm">
       <header>
-        <h1 class="rechner">BMI Rechner</h1>
+        <h1 class="rechner">BMI Calculator</h1>
       </header>
       <div class="d-flex formflex">
         <div class="formges">
           <form action="">
             <div class="gewicht">
               <div>
-                <label for="weight" class="col-form-label">Gewicht: </label>
+                <label for="weight" class="col-form-label">Weight: </label>
               </div>
-              <div class="inputwidth">
+              <div class="leftweight inputwidth">
                 <input
                   class="form-control"
                   step="0.01"
@@ -41,7 +41,7 @@
             </div>
             <div class="gewicht">
               <div>
-                <label for="tall" class="col-form-label">Höhe: </label>
+                <label for="tall" class="col-form-label">Hight: </label>
               </div>
               <div class="lefthohe inputwidth">
                 <input
@@ -58,7 +58,7 @@
             </div>
             <div class="gewicht">
               <div>
-                <label for="age" class="col-form-label">Alter: </label>
+                <label for="age" class="col-form-label">Age: </label>
               </div>
 
               <div class="leftage inputwidth">
@@ -67,7 +67,7 @@
                   type="number"
                   name="age"
                   id="age"
-                  placeholder="(in Jahren)"
+                  placeholder="(in year)"
                 />
               </div>
             </div>
@@ -83,13 +83,16 @@
                   type="submit"
                   class="btn btn-primary btn-lg"
                 >
-                  BERECHNEN
+                  CALCULATE
                 </button>
               </div>
             </div>
           </form>
         </div>
         <div class="parentoutput">
+          <div class="result">
+            <span id="lastresult"></span>
+          </div>
           <div class="outputBMI">
             <span id="resultclr"></span>
             <span id="outputstatus" class="mt-2"></span>
@@ -102,32 +105,31 @@
         </div>
       </div>
       <section class="mt-2">
-        <h2 id="hide">Was ist der BMI?</h2>
+        <h2 id="hide">What is BMI?</h2>
         <p>
-          Der Body-Mass-Index, kurz BMI, ist die gebräuchlichste Formel zur
-          Gewichtsberechnung. Er ergibt sich aus dem Verhältnis des
-          Körpergewichts in Kilogramm und der Körpergröße in Metern zum Quadrat.
-          Je nach Höhe des errechneten Werts unterscheidet die Deutsche
-          Gesellschaft für Ernährung (DGE) für die Auswertung fünf Kategorien:
-          Untergewicht,Normalgewicht, Übergewicht, extremes
-          Übergewicht(Adipositas) und massive Adipositas.
+          The body mass index, or BMI for short, is the most common formula for
+          calculating weight calculation. It is calculated from the ratio of the
+          body weight in kilograms and the height in meters squared. Depending
+          on the level of the calculated value, the German Society for Nutrition
+          (DGE) distinguishes five categories for the evaluation:
+          Underweight,Normal weight, Overweight, Extreme overweight(obesity) and
+          massive obesity.
         </p>
       </section>
       <section id="hide">
-        <h3>BMI abhängig von Alter</h3>
+        <h3>BMI depending on age?</h3>
         <p>
-          Um eine bessere Einschätzung zum eigenen Gewicht abgeben zu können,
-          muss neben dem Gewicht und der Körpergröße auch das Alter
-          berücksichtigt werden. Das Alter ist relevant, da sich das
-          Normalgewicht mit dem Älterwerden verschiebt. Etwa ab 40 Jahren
-          verändern sich der Stoffwechsel und die Körperzusammensetzung. Die
-          Folge: Wir nehmen ganz natürlich an Gewicht zu, das Normalgewicht
-          verschiebt sich also und damit der empfohlene BMI. Allerdings kann das
-          Körpergewicht mit fortschreitendem Alter auch wieder sinken, denn
-          ältere Menschen bauen verstärkt an Muskelmasse ab, die schwerer ist
-          als Fett. Das führt zu einem geringeren Gewicht, sodass der BMI bei
-          älteren Normalgewichtigen fälschlicherweise auf Untergewicht hindeuten
-          kann.
+          In order to be able to give a better estimation to the own weight,
+          weight and height as well as age must be taken into account. must also
+          be taken into account. Age is relevant because normal weight normal
+          weight shifts with aging. From around the age of 40 the metabolism and
+          body composition change. The consequence: we naturally gain weight, so
+          the normal weight shifts shifts and with it the recommended BMI.
+          However, the weight can also decrease again with advancing age,
+          because older people older people lose more muscle mass, which is
+          heavier than fat. than fat. This results in a lower weight, so that
+          the BMI for older people of normal weight may falsely indicate that
+          they are underweight. can.
         </p>
       </section>
       <footer class="container-fluid text-center">
@@ -135,6 +137,6 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
