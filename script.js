@@ -59,7 +59,7 @@ async function getBmiMen(event) {
   }
 
   if (roundedAndToStr < 19 + ageStatus) {
-    status = " Underweight";
+    status = " Under weight";
     color = "#00008B";
   } else if (
     roundedAndToStr >= 19 + ageStatus &&
@@ -71,7 +71,7 @@ async function getBmiMen(event) {
     roundedAndToStr >= 25 + ageStatus &&
     roundedAndToStr < 30 + ageStatus
   ) {
-    status = "Overweight";
+    status = "Over weight";
     color = "#ADFF2F";
   } else if (
     roundedAndToStr >= 30 + ageStatus &&
