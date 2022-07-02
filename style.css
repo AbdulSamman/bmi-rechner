@@ -19,6 +19,9 @@ header,
 footer {
   border-radius: 10px;
 }
+p {
+  overflow-wrap: break-word;
+}
 header {
   background-color: #749eb2;
   display: flex;
