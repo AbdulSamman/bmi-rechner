@@ -30,6 +30,11 @@ async function getBmiMen(event) {
     alert("Elephant or what!!");
     return;
   }
+  if (weight.value == 0) {
+    alert("Enter weight!!");
+    return;
+  }
+
   let status = "";
   let ageStatus = 0; //REACT iwie switch mit if -> intigireren
   let color = "";
@@ -51,7 +56,6 @@ async function getBmiMen(event) {
     ageStatus = 4;
     idealerResult.textContent = `${idealerBmi(23, 29)}`;
   } else if (ageValue >= 65) {
-    resultclr;
     ageStatus = 5;
     idealerResult.textContent = `${idealerBmi(24, 30)}`;
   } else {
