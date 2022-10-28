@@ -4,11 +4,11 @@ const age = document.getElementById("age");
 
 const outputBmi = document.querySelector(".outputBMI");
 const outputStatus = document.getElementById("outputstatus");
-const idealerResult = document.getElementById("idealerwert");
+const idealerResult = document.getElementById("idealerWert");
 const idealerTxt = document.getElementById("idealertxt");
 const button = document.getElementById("getbmi");
-const resultColor = document.getElementById("resultclr");
-const lastresult = document.getElementById("lastresult");
+const resultColor = document.getElementById("resultClr");
+const lastResultLocal = document.getElementById("lastResultLocal");
 
 button.addEventListener("click", getBmiMen);
 
@@ -16,7 +16,7 @@ async function getBmiMen(event) {
   event.preventDefault();
   const weightValue = weight.value;
 
-  const tallValue = tall.value;
+  const tallValue = tall.value / 100;
   const ageValue = age.value;
   const bmi = weightValue / tallValue ** 2;
 
@@ -24,7 +24,7 @@ async function getBmiMen(event) {
 
   localStorage.setItem("lastResult", roundedAndToStr);
   const getResult = localStorage.getItem("lastResult");
-  lastresult.innerHTML = ` <span id="lastresult">CurrentlyBMI:</span> `;
+  lastResultLocal.innerHTML = ` <span id="lastResultLocal">CurrentlyBMI:</span> `;
 
   if (weight.value > 800) {
     alert("Elephant or what!!");
@@ -98,10 +98,6 @@ async function getBmiMen(event) {
 }
 
 function idealerBmi(min, max) {
-  idealerResult.style.display = "flex";
-  idealerResult.style.justifyContent = "center";
-  idealerResult.style.alignItems = "center";
-  idealerResult.style.color = "seagreen";
   idealerResult.style.border = "7px solid palegreen";
   idealerTxt.textContent = "IDEAL BMI";
   idealerTxt.style.color = "seagreen";
@@ -114,12 +110,7 @@ function lastResultWiederrufen() {
 
   if (lastResult) {
     resultColor.textContent = `${lastResult}`;
-    lastresult.innerHTML = `<span id="lastresult">LastBMI:</span>`;
-    resultColor.style.display = "flex";
-    resultColor.style.justifyContent = "center";
-    resultColor.style.alignItems = "center";
-    resultColor.style.color = "seagreen";
-    resultColor.style.border = "7px solid pink";
+    lastResultLocal.innerHTML = `<span id="lastResultLocal">LastBMI:</span>`;
   }
 }
 lastResultWiederrufen();

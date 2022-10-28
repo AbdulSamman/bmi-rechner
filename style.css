@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+  padding: 0.5rem 0;
 }
 
 header > .rechner {
@@ -43,9 +43,14 @@ header > .rechner {
   align-items: left;
   border-style: solid;
 }
-
-#idealerwert,
-#resultclr {
+#idealerWert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: seagreen;
+}
+#idealerWert,
+#resultClr {
   border-radius: 100%;
   height: 10rem;
   width: 10rem;
@@ -54,7 +59,14 @@ header > .rechner {
   font-size: large;
   font-weight: bold;
 }
-#lastresult {
+#resultClr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: seagreen;
+  border: 7px solid pink;
+}
+#lastResultLocal {
   border-radius: 100%;
   height: 10rem;
   width: 10rem;
@@ -155,7 +167,6 @@ section > h3 {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 40vh;
   }
 
   .formges {
@@ -179,15 +190,15 @@ section > h3 {
   .leftbmi {
     margin-left: 0;
   }
-  #resultclr,
+  #resultClr,
   #outputstatus,
-  #idealerwert,
+  #idealerWert,
   #idealertxt {
     font-size: 2rem;
     height: 20%;
   }
-  #idealerwert,
-  #resultclr {
+  #idealerWert,
+  #resultClr {
     border-radius: 100%;
     height: 10rem;
     width: 10rem;
