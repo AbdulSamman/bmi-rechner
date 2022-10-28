@@ -30,6 +30,10 @@ async function getBmiMen(event) {
     alert("Elephant or what!!");
     return;
   }
+  if (tall.value < 70) {
+    alert("not suitable for dwarfs ");
+    return;
+  }
   if (weight.value == 0) {
     alert("Enter weight!!");
     return;
@@ -39,10 +43,10 @@ async function getBmiMen(event) {
   let ageStatus = 0; //REACT iwie switch mit if -> intigireren
   let color = "";
 
-  if (ageValue >= 19 && ageValue <= 24) {
+  if (ageValue >= 18.1 && ageValue <= 24) {
     ageStatus = 0;
 
-    idealerResult.textContent = ` ${idealerBmi(19, 25)}`;
+    idealerResult.textContent = ` ${idealerBmi(18.1, 25)}`;
   } else if (ageValue >= 25 && ageValue <= 34) {
     ageStatus = 1;
     idealerResult.textContent = `${idealerBmi(20, 26)}`;
