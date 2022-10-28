@@ -176,7 +176,7 @@ section > h3 {
   .outputBMI,
   #parentidealerBMI {
     width: 100%;
-    height: 22vh;
+    height: 180px;
   }
   .gewicht {
     flex-direction: column;
